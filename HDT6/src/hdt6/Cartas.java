@@ -76,32 +76,48 @@ public class Cartas {
             return null;
         }
     }
-    //Mostrar el nombre, tipo y cantidad de cada carta que el usuario tiene en su colección.
+    /**Mostrar el nombre, tipo y cantidad de cada carta que el usuario tiene en su colección.
+     * 
+     * @return devuleve todas las cartas
+     */
     public ArrayList<String> getAllCards_Nombre_Tipo_Cantidad(){
         ArrayList<String> todasLasCartas = new ArrayList<String>();
         Baraja.forEach((k,v)->todasLasCartas.add("Nombre: "+k+" Tipo: "+v+" Cantidad: 1"));
         return todasLasCartas;
     }
-    //Mostrar el nombre y tipo de todas las cartas existentes.
+    /**Mostrar el nombre y tipo de todas las cartas existentes.
+     * 
+     * @return  devuelve lista con todas las cartas
+     */
     public ArrayList<String> getAllCards_Nombre_Tipo(){
         ArrayList<String> todasLasCartas = new ArrayList<String>();
         Baraja.forEach((k,v)->todasLasCartas.add("Nombre: "+k+" Tipo: "+v));
         return todasLasCartas;
     }
-    //Mostrar el nombre y tipo de todas las cartas existentes, ordenadas por tipo.
+    /**Mostrar el nombre y tipo de todas las cartas existentes, ordenadas por tipo.
+     * 
+     * @return devuelve lista con todas las catyas ordenadas por tipo
+     */
      public ArrayList<String> getAllCards_Nombre_Tipo_Ordenada(){
         ArrayList<Carta> todasLasCartas = new ArrayList<Carta>();
         Baraja.forEach((k,v)->todasLasCartas.add(new Carta(k,v)));
         return Ordenar(todasLasCartas);
     }
-    //Mostrar el nombre, tipo y cantidad de cada carta que el usuario tiene en su colección, ordenadas por tipo.
+    /**Mostrar el nombre, tipo y cantidad de cada carta que el usuario tiene en su colección, ordenadas por tipo.
+     * 
+     * @return lista con todas las cantidades de cartas ordenadas por tipo
+     */
      public ArrayList<String> getAllCards_Nombre_Tipo_Cantidad_Ordenada(){
         ArrayList<Carta> todasLasCartas = new ArrayList<Carta>();
         Baraja.forEach((k,v)->todasLasCartas.add(new Carta(k,v)));
         return OrdenarConCantidad(todasLasCartas);
     } 
 
-    //Ordena las cartas
+    /**Ordena las cartas
+     * 
+     * @param Lista lista de la baraja
+     * @return lista ordenada
+     */
     public ArrayList<String> Ordenar(ArrayList<Carta> Lista){
         Carta c = new Carta("","");
         ArrayList<String> result = new ArrayList<String>();
@@ -127,7 +143,11 @@ public class Cartas {
         return result;
     }
     
-    //Ordena las cartas con cantidad
+    /**Ordena las cartas con cantidad
+     * 
+     * @param Lista lista de las cartas
+     * @return lista con las cantidades ordenadas
+     */
     public ArrayList<String> OrdenarConCantidad(ArrayList<Carta> Lista){
         Carta c = new Carta("","");
         ArrayList<String> result = new ArrayList<String>();

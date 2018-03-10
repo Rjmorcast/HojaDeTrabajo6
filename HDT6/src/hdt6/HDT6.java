@@ -53,9 +53,9 @@ public class HDT6 {
                             System.out.println("su carta a sido agregada exitosamente");
                             break;
                             
-                case "2":   System.out.println("ingrese tipo de la carta que desea buscar");
-                            tipo = leer.next();
-                            System.out.println(cartas.getTipo(tipo));
+                case "2":   System.out.println("ingrese el nombre de la carta que desea buscar");
+                            key = leer.next();
+                            System.out.println(cartas.getTipo(key));
                             break;
                             
                 case "3":   for (int i = 0; i < cartas.getAllCards_Nombre_Tipo_Cantidad().size(); i++) {

@@ -51,7 +51,7 @@ public class CartasTest {
         System.out.println("addCarta");
         String key = "Hola";
         String value = "Monstruo";
-        Cartas instance = new Cartas(3);
+        Cartas instance = new Cartas("3");
         instance.addCarta(key, value);
         // TODO review the generated test code and remove the default call to fail.
         String result = instance.getTipo(key);
@@ -68,7 +68,7 @@ public class CartasTest {
         System.out.println("getTipo");
         String key = "Hola";
         String value = "Monstruo";
-        Cartas instance = new Cartas(3);
+        Cartas instance = new Cartas("3");
         instance.addCarta(key, value);
         // TODO review the generated test code and remove the default call to fail.
         String result = instance.getTipo(key);
@@ -84,7 +84,7 @@ public class CartasTest {
         System.out.println("getAllCards_Nombre_Tipo_Cantidad");
         String key = "Hola";
         String value = "Monstruo";
-        Cartas instance = new Cartas(3);
+        Cartas instance = new Cartas("3");
         instance.addCarta(key, value);
         // TODO review the generated test code and remove the default call to fail.
         ArrayList<String> prueba  = instance.getAllCards_Nombre_Tipo_Cantidad();
@@ -101,7 +101,7 @@ public class CartasTest {
         System.out.println("getAllCards_Nombre_Tipo");
          String key = "Hola";
         String value = "Monstruo";
-        Cartas instance = new Cartas(3);
+        Cartas instance = new Cartas("3");
         instance.addCarta(key, value);
         // TODO review the generated test code and remove the default call to fail.
         ArrayList<String> prueba  = instance.getAllCards_Nombre_Tipo();
