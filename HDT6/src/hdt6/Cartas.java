@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hdt6;
+
 
 import static com.sun.org.apache.xalan.internal.lib.ExsltDynamic.map;
 import java.io.BufferedReader;

@@ -4,7 +4,7 @@
  * Rodrigo Morales 17027
  * 
  */
-package hdt6;
+
 
 import java.io.BufferedReader;
 import java.io.File;
