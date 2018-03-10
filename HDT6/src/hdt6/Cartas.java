@@ -6,6 +6,9 @@
 package hdt6;
 
 import static com.sun.org.apache.xalan.internal.lib.ExsltDynamic.map;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
@@ -21,7 +24,7 @@ public class Cartas {
     public Map<String, String> Baraja;
     
     //Constructor
-    public Cartas(int tipo) {
+    public Cartas(String tipo) {
         //Usa el factory
         Baraja = CartasFactory.setTypeCartas(tipo);
         getCards();
@@ -29,7 +32,33 @@ public class Cartas {
  
     public void getCards(){
         //Jumpi aquí va el método de lectura del archivo;
-    }
+        File file = new File("C:\\Users\\JUMPSTONIK\\Documents\\NetBeansProjects\\HojaDeTrabajo6\\HDT6\\src\\hdt6\\cards_desc.txt");
+        //lista de las lineas extraidas del documento
+        ArrayList<String> listaLineas = new ArrayList<String>();
+        //lista con los objetos de tipo Cartas
+        ArrayList<Cartas> ListaCartas = new ArrayList<Cartas>();
+
+        //aqui se hace el intento por obtener el archivo con sus informaicon    
+        try {
+            FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
+
+            String linea;
+            //aqui esta extrayendos linea por linea del txt
+            while((linea = br.readLine()) != null)
+                listaLineas.add(linea);
+
+            fr.close();
+        }//esto en caso halla algun error con el archivo
+        catch(Exception e) {
+            System.out.println("Excepcion leyendo fichero : " + e);
+        }
+        //este for solo es de prueba para separar el key, del tipo
+        for (int i = 0; i < listaLineas.size(); i++) {
+            String[] keyAndType = listaLineas.get(i).split(">");
+            addCarta(keyAndType[0],keyAndType[1]) ; 
+        }
+        }
     //Agregar una carta a la colección del usuario.
     public void addCarta(String key, String value){
         if (!Baraja.containsKey(key)){
